@@ -1,22 +1,16 @@
-body {
-  margin: 30px 50px 30px;
-  padding: 10px;
-}
-
-#container {
-  width: 800px;
-}
-
 footer {
-    background-color: #aaa;
-    height: 50px;
+    background-color: #222;
+    height: 60px;
     text-align: center;
-    line-height: 50px;
-    color : #fff;
-    margin-top:30px;
+    color : #9d9d9d;
+    margin: 80px 0 0 0;
+    padding: 10px;
 }
 
-#help {
-  margin-right: 35px;
-  padding-right: 35px;
+footer p.text-muted {
+  margin: 10px 0;
+}
+
+.navbar-right {
+  margin-right: 20px;
 }
