@@ -1,24 +1,24 @@
 {
     "version": "0.1.0",
-    "isShellCommand": true,
-    "showOutput": "always",
-    "echoCommand": true,
-    "suppressTaskName": true,
     "tasks": [
         {
+            "key": "cmd+shift+b",
             "taskName": "build",
             "command": "gulp",
-            "showOutput": "silent",
+            "showOutput": "always",
             "args": [
                "build"
-            ]
+            ],
+            "isShellCommand": true
         },
         {
             "taskName": "clean",
             "command": "gulp",
+            "showOutput": "always",
             "args": [
                "clean"
-            ]
+            ],
+            "isShellCommand": true
         }
     ]
 }
