@@ -28,28 +28,29 @@
 
 * Open index.html
 
-* Directory structure
-    ```
-    .
-    ├── README.md
-    ├── gulpfile.js
-    ├── index.html
-    ├── package.json
-    ├── src
-    │   ├── assets
-    │   │   └── css
-    │   │       └── main.css
-    │   ├── client
-    │   │   └── jquery.js
-    │   ├── components
-    │   │   ├── Table.tsx
-    │   │   ├── Test.tsx
-    │   │   └── TextArea.tsx
-    │   ├── index.tsx
-    │   └── types
-    │       ├── rc-table.d.ts
-    │       └── react-addons-update.d.ts
-    ├── tsconfig.json
-    ├── webpack.config.js
-    └── yarn.lock
-    ```
+### Directory structure
+
+```
+.
+├── README.md
+├── gulpfile.js
+├── index.html
+├── package.json
+├── src
+│   ├── assets
+│   │   └── css
+│   │       └── main.css
+│   ├── client
+│   │   └── jquery.js
+│   ├── components
+│   │   ├── Table.tsx
+│   │   ├── Test.tsx
+│   │   └── TextArea.tsx
+│   ├── index.tsx
+│   └── types
+│       ├── rc-table.d.ts
+│       └── react-addons-update.d.ts
+├── tsconfig.json
+├── webpack.config.js
+└── yarn.lock
+```
