@@ -47,7 +47,7 @@ class MyTable extends React.Component <any, any> {
         id: i,
         item: `Item${i}`,
         manager: `Manager${i}`,
-        borrower: `user${i}`,
+        user: `user${i}`,
         email: `test${i}@example.com`,
         returnDate: '2017年3月12日'
       });
