@@ -5,13 +5,11 @@ import * as update from 'react-addons-update';
 import * as $ from 'jquery';
 import * as ReactDataGrid from 'react-data-grid';
 
-class MyTable extends React.Component < any, any > {
+class MyTable extends React.Component <any, any> {
   constructor(props : any) {
     super(props);
     this.state = {
-      columns: [
-        {
-          key: 'id',
+      columns: [ { key: 'id',
           name: 'ID',
           width: 80
         }, {
@@ -23,8 +21,8 @@ class MyTable extends React.Component < any, any > {
           name: 'Manager',
           editable: false
         }, {
-          key: 'borrower',
-          name: 'Borrower',
+          key: 'user',
+          name: 'User',
           editable: true
         }, {
           key: 'email',
@@ -36,7 +34,7 @@ class MyTable extends React.Component < any, any > {
           editable: false
         }
       ],
-      rows: this.createRows(15)
+      rows: this.createRows(25)
     };
   }
 
@@ -84,7 +82,7 @@ class MyTable extends React.Component < any, any > {
           columns={this.state.columns}
           rowGetter={this.rowGetter.bind(this)}
           rowsCount={this.state.rows.length}
-          minHeight={400}
+          minHeight={ ((this.state.rows.length + 1) * 35) > 385 ? 385 : (this.state.rows.length + 1) * 35}
           onGridRowsUpdated={this.handleGridRowsUpdated.bind(this)}/>
       </div>
     );}
