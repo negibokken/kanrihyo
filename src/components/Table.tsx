@@ -65,18 +65,8 @@ class MyTable extends React.Component <any, any> {
     this.setState({rows});
   }
 
-  onMouseOver() : any {
-    let test: any = document.getElementById('test');
-    test.style.color = "red";
-  }
-
-  onMouseOut() : any {
-    let test: any = document.getElementById('test');
-    test.style.color = "black";
-  }
-
   render() : any {return(
-      <div id="test" onMouseOver={this.onMouseOver.bind(this)} onMouseOut={this.onMouseOut.bind(this)}>
+      <div id="test">
         <ReactDataGrid
           enableCellSelect={true}
           columns={this.state.columns}
