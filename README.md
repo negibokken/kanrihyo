@@ -26,7 +26,9 @@
       $ npm build
       ```
 
-* Open index.html
+* Open below pages (under constructed)
+  - index.html (top page)
+  - main.html (table page)
 
 ### Directory structure
 
@@ -35,6 +37,7 @@
 ├── README.md
 ├── gulpfile.js
 ├── index.html
+├── main.html
 ├── package.json
 ├── src
 │   ├── assets
@@ -45,7 +48,8 @@
 │   ├── components
 │   │   ├── Table.tsx
 │   │   ├── Test.tsx
-│   │   └── TextArea.tsx
+│   │   ├── TextArea.tsx
+│   │   └── Title.tsx
 │   ├── index.tsx
 │   └── types
 │       ├── rc-table.d.ts
