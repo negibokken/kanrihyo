@@ -38,5 +38,9 @@
     "webpack-dev-server": "1.14"
   },
   "main": "index.js",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean"
+  }
 }
