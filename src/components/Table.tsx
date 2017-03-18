@@ -36,11 +36,11 @@ class MyTable extends React.Component < any, any > {
           editable: false
         }
       ],
-      rows: this.createRows(10)
+      rows: this.createRows(15)
     };
   }
 
-  rowGetter(i : number) : any {return this.state.rows[i];}
+  rowGetter(i : number) : any { return this.state.rows[i]; }
 
   createRows(numberOfRows : number) : any {
     const rows: any[] = [];
@@ -50,7 +50,7 @@ class MyTable extends React.Component < any, any > {
         item: `Item${i}`,
         manager: `Manager${i}`,
         borrower: `user${i}`,
-        email: 'test@example.com',
+        email: `test${i}@example.com`,
         returnDate: '2017年3月12日'
       });
     }
