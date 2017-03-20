@@ -69,3 +69,7 @@
 ├── webpack.config.js
 └── yarn.lock
 ```
+
+## License
+
+MIT
