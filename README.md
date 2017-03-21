@@ -34,7 +34,7 @@
     ```
     $ fresh
     ```
-    - then start server and reboot if you update any .go files
+    - then start server and reboot when you update any .go files
 
 * Access below pages (under constructed)
   - `http://localhost:8080/` to access index.html
