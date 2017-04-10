@@ -1,82 +1,54 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as update from 'react-addons-update';
 
-import * as $ from 'jquery';
-import * as ReactDataGrid from 'react-data-grid';
+import { Row } from './Row';
 
-class MyTable extends React.Component <any, any> {
-  constructor(props : any) {
-    super(props);
-    this.state = {
-      columns: [ { key: 'id',
-          name: 'ID',
-          width: 80
-        }, {
-          key: 'item',
-          name: 'Item',
-          editable: true
-        }, {
-          key: 'manager',
-          name: 'Manager',
-          editable: false
-        }, {
-          key: 'user',
-          name: 'User',
-          editable: true
-        }, {
-          key: 'email',
-          name: 'Email',
-          editable: true
-        }, {
-          key: 'returnDate',
-          name: 'Return Date',
-          editable: false
-        }
-      ],
-      rows: this.createRows(25)
-    };
+type Content = any;
+
+interface ITableProps {
+  contents: Content[];
+};
+
+interface ITableState {
+};
+
+export class Table extends React.Component <ITableProps, ITableState> {
+  constructor() {
+    super();
   }
 
-  rowGetter(i : number) : any { return this.state.rows[i]; }
 
-  createRows(numberOfRows : number) : any {
-    const rows: any[] = [];
-    for (let i : number = 1; i <= numberOfRows; i++) {
-      rows.push({
-        id: i,
-        item: `Item${i}`,
-        manager: `Manager${i}`,
-        user: `user${i}`,
-        email: `test${i}@example.com`,
-        returnDate: '2017年3月12日'
-      });
-    }
+  setBody(): JSX.Element[] {
+    const contents: any = this.props;
+    const rows: JSX.Element[] = [];
+    this.props.contents.map((cur, idx) => {
+      if (idx !== 0) {
+        rows.push (
+          <Row key={`row-${idx}`} rownum={idx} rowcontents={cur} />
+        );
+      }
+    });
     return rows;
   }
 
-  handleGridRowsUpdated({fromRow, toRow, updated} : any) : any {
-    const rows: any[] = this.state.rows.slice();
-    for (let i : number = fromRow; i <= toRow; i++) {
-      const rowToUpdate : any = rows[i];
-      const updatedRow : any = update(rowToUpdate, {$merge: updated});
-      rows[i] = updatedRow;
-    }
-    this.setState({rows});
+  getStyle(): React.CSSProperties {
+    return{
+      width: '100%',
+      border: '1px solid #000',
+      borderCollapse: 'collapse'
+    };
   }
 
-  render() : any {return(
-      <div id="test">
-        <ReactDataGrid
-          enableCellSelect={true}
-          columns={this.state.columns}
-          rowGetter={this.rowGetter.bind(this)}
-          rowsCount={this.state.rows.length}
-          minHeight={ ((this.state.rows.length + 1) * 35) > 385 ? 385 : (this.state.rows.length + 1) * 35}
-          onGridRowsUpdated={this.handleGridRowsUpdated.bind(this)}/>
-      </div>
-    );}
+  render(): JSX.Element {
+    return (
+      <table style={this.getStyle()}>
+        <thead>
+          <Row key={`row-0`} rownum={0} rowcontents={this.props.contents[0]} />
+        </thead>
+        <tbody>
+          {this.setBody()}
+        </tbody>
+      </table>
+    );
+  }
 }
-
-ReactDOM.render(
-  <MyTable/>, document.getElementById('mytable'));

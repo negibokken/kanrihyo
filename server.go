@@ -19,7 +19,7 @@ func main() {
 
 	// Main ページ
 	r.GET("/", func(c *gin.Context) {
-		c.HTML(200, "index.html", nil)
+		c.HTML(200, "main.html", nil)
 	})
 
 	r.POST("/tables/create", func(c *gin.Context) {

@@ -1,7 +1,6 @@
 module.exports = {
   entry: [
-    "./src/index.tsx", "./src/client/jquery.js", "./src/components/Table.tsx",
-    "./src/components/TextArea.tsx", "./src/components/Title.tsx",
+    "./src/index.tsx",
   ],
   output: {
     filename: "bundle.js",

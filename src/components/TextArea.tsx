@@ -1,14 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import Textarea from 'react-textarea-autosize';
+interface ITextAreaProps {
+  rows: number;
+  cols: number;
+};
 
-class DescriptionArea extends React.Component <any, any> {
+interface ITextAreaState {
+};
+
+export class TextArea extends React.Component <ITextAreaProps, ITextAreaState> {
   constructor(props: any) {
     super(props);
-    this.state = {
-      description: 'Eneter explanation of this table'
-    };
   }
 
   _onChange(): any {
@@ -19,19 +22,16 @@ class DescriptionArea extends React.Component <any, any> {
     const textStyle: any = {
       margin: '30px 0px'
     };
+    const {rows, cols}: any = this.props;
     return (
       <div style={textStyle}>
-        <Textarea
-          rows={3}
-          cols={100}
-          defaultValue={this.state.description}
-          onChange={this._onChange.bind(this)} />
+        <textarea rows={rows} cols={cols} />
       </div>
     );
   }
 }
 
-ReactDOM.render(
-  <DescriptionArea />,
-  document.getElementById('description-area')
-);
+// ReactDOM.render(
+//   <DescriptionArea />,
+//   document.getElementById('description-area')
+// );
