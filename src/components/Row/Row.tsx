@@ -21,7 +21,7 @@ export default class Row extends React.Component <IRowProps, IRowState> {
     const cells: JSX.Element[] = [];
     this.props.rowcontents.map((cur, idx) => {
       cells.push (
-        <Cell key={`row-${rownum}-col-${idx}`} rownum={rownum} colnum={idx} text={cur} />
+        <Cell key={`row-${rownum}-col-${idx}`} rownum={rownum} colnum={idx} text={cur} input={true} />
       );
     });
     return cells;
