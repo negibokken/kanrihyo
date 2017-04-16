@@ -10,7 +10,7 @@ interface ITextAreaState {
 };
 
 export default class TextArea extends React.Component <ITextAreaProps, ITextAreaState> {
-  constructor(props: any) {
+  constructor(props: ITextAreaProps) {
     super(props);
   }
 
@@ -24,14 +24,9 @@ export default class TextArea extends React.Component <ITextAreaProps, ITextArea
     };
     const {rows, cols}: any = this.props;
     return (
-      <div style={textStyle}>
+      <div className="row" style={textStyle}>
         <textarea rows={rows} cols={cols} />
       </div>
     );
   }
 }
-
-// ReactDOM.render(
-//   <DescriptionArea />,
-//   document.getElementById('description-area')
-// );

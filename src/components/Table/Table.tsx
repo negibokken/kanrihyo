@@ -13,7 +13,7 @@ interface ITableState {
 };
 
 export default class Table extends React.Component <ITableProps, ITableState> {
-  constructor() {
+  constructor(props: ITableProps) {
     super();
   }
 

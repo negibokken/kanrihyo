@@ -10,7 +10,7 @@ class Index extends React.Component <void, void> {
     super();
   }
 
-  getTable(): any {
+  getTable(): any[] {
     const row: any[] = [];
     for (let i: number = 1; i < 50; i++) {
       row.push([i, 'aaa', 'aaa', 'bbb', 'ccc', 'dddd', 'eee']);
@@ -44,7 +44,7 @@ class Index extends React.Component <void, void> {
 
   render(): JSX.Element {
     return (
-      <div style={{width: '100%'}}>
+      <div className="Index" style={{width: '100%'}}>
         {this.returnElement()}
       </div>
     );
