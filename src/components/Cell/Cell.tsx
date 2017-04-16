@@ -1,6 +1,6 @@
+import * as $ from 'jquery';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as $ from 'jquery';
 
 interface ICellProps {
   rownum: number;

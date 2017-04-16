@@ -2,10 +2,9 @@
     "version": "0.1.0",
     "tasks": [
         {
-            "key": "cmd+shift+b",
             "taskName": "build",
             "command": "gulp",
-            "showOutput": "always",
+            "showOutput": "never",
             "args": [
                "build"
             ],
@@ -14,7 +13,7 @@
         {
             "taskName": "clean",
             "command": "gulp",
-            "showOutput": "always",
+            "showOutput": "never",
             "args": [
                "clean"
             ],

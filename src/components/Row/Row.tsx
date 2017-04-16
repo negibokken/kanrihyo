@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Cell } from './Cell';
+import { Cell } from '../Cell/Cell';
 
 interface IRowProps {
   rowcontents: string[];
@@ -11,7 +11,7 @@ interface IRowProps {
 interface IRowState {
 };
 
-export class Row extends React.Component <IRowProps, IRowState> {
+export default class Row extends React.Component <IRowProps, IRowState> {
   constructor() {
     super();
   }

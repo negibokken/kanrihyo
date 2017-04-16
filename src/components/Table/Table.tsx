@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Row } from './Row';
+import Row from '../Row/Row';
 
 type Content = any;
 
@@ -16,7 +16,6 @@ export class Table extends React.Component <ITableProps, ITableState> {
   constructor() {
     super();
   }
-
 
   setBody(): JSX.Element[] {
     const contents: any = this.props;

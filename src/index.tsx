@@ -1,11 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import {Title} from './components/Title';
-import {Cell} from './components/Cell';
-import {Table} from './components/Table';
-import {Row} from './components/Row';
-import {TextArea} from './components/TextArea';
+import {Table} from './components/Table/Table';
+import {TextArea} from './components/TextArea/TextArea';
+import {Title} from './components/Title/Title';
 
 class Index extends React.Component <void, void> {
   constructor() {
