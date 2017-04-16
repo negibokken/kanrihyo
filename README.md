@@ -28,7 +28,7 @@
   - In case of npm
       ```
       $ npm install
-      $ npm build
+      $ npm run build
       ```
 2. Execute fresh
     ```
