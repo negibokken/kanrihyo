@@ -9,7 +9,7 @@ interface ITextAreaProps {
 interface ITextAreaState {
 };
 
-export class TextArea extends React.Component <ITextAreaProps, ITextAreaState> {
+export default class TextArea extends React.Component <ITextAreaProps, ITextAreaState> {
   constructor(props: any) {
     super(props);
   }

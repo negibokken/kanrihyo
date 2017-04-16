@@ -11,7 +11,7 @@ interface ICellProps {
 interface ICellState {
 };
 
-export class Cell extends React.Component <ICellProps, ICellState> {
+export default class Cell extends React.Component <ICellProps, ICellState> {
   constructor() {
     super();
   }

@@ -8,7 +8,7 @@ interface ITitleProps {
 interface ITitleState {
 };
 
-export class Title extends React.Component <ITitleProps, ITitleState> {
+export default class Title extends React.Component <ITitleProps, ITitleState> {
   constructor() {
     super();
   }

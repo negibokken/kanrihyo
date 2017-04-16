@@ -12,7 +12,7 @@ interface ITableProps {
 interface ITableState {
 };
 
-export class Table extends React.Component <ITableProps, ITableState> {
+export default class Table extends React.Component <ITableProps, ITableState> {
   constructor() {
     super();
   }
