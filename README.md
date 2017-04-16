@@ -40,37 +40,6 @@
   - `http://localhost:8080/` to access index.html
       - and enter table name in form of index.html. Then you can see table page.
 
-### Directory structure
-
-```
-.
-├── README.md
-├── gulpfile.js
-├── index.html
-├── main.html
-├── package.json
-├── runner.conf
-├── server.go
-├── src
-│   ├── assets
-│   │   ├── css
-│   │   │   └── main.css
-│   │   └── favicon.ico
-│   ├── client
-│   │   └── jquery.js
-│   ├── components
-│   │   ├── Table.tsx
-│   │   ├── TextArea.tsx
-│   │   └── Title.tsx
-│   ├── index.tsx
-│   └── types
-│       ├── rc-table.d.ts
-│       └── react-addons-update.d.ts
-├── tsconfig.json
-├── webpack.config.js
-└── yarn.lock
-```
-
 ## License
 
 MIT
