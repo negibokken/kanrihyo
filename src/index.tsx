@@ -12,8 +12,8 @@ class Index extends React.Component <void, void> {
 
   getTable(): any[] {
     const row: any[] = [];
-    for (let i: number = 1; i < 50; i++) {
-      row.push([i, 'aaa', 'aaa', 'bbb', 'ccc', 'dddd', 'eee']);
+    for (let i: number = 1; i < 2; i++) {
+      row.push([i, 'aaa', 'bbb']);
     }
     return row;
   }
