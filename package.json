@@ -22,7 +22,6 @@
     "@types/react": "^0.14.55",
     "@types/react-data-grid": "^1.0.7",
     "@types/react-dom": "0.14.19",
-    "@types/react-textarea-autosize": "^4.0.6",
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "css-loader": "^0.27.1",
     "del": "^2.2.2",
