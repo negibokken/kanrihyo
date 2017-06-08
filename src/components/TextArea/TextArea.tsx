@@ -19,12 +19,9 @@ export default class TextArea extends React.Component <ITextAreaProps, ITextArea
   }
 
   render(): any {
-    const textStyle: any = {
-      margin: '30px 0px'
-    };
     const {rows, cols}: any = this.props;
     return (
-      <div className='row' style={textStyle}>
+      <div className='row'>
         <textarea rows={rows} cols={cols} />
       </div>
     );

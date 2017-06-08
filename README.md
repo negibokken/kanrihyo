@@ -19,7 +19,7 @@
 
 ### Build
 
-1. Execute below commands
+* Execute below commands
   - In case of yarn
       ```sh
       $ yarn install
@@ -30,14 +30,16 @@
       $ npm install
       $ npm run build
       ```
-2. Execute fresh
+
+### Hot Module Replacement
+
+* Execute webpack-dev-server
     ```
-    $ fresh
+    $ webpack-dev-server --hot --inline
     ```
-    - then start server and reboot when you update any .go files
 
 * Access below pages (under constructed)
-  - `http://localhost:8080/` to access index.html
+  - `http://localhost:8088/` to access index.html
       - and enter table name in form of index.html. Then you can see table page.
 
 ## License

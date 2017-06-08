@@ -20,6 +20,7 @@ export default class Table extends React.Component <ITableProps, ITableState> {
   setBody(): JSX.Element[] {
     const contents: any = this.props;
     const rows: JSX.Element[] = [];
+    console.log(this.props.contents)
     this.props.contents.map((cur, idx) => {
       if (idx !== 0) {
         rows.push (
@@ -30,17 +31,17 @@ export default class Table extends React.Component <ITableProps, ITableState> {
     return rows;
   }
 
-  getStyle(): React.CSSProperties {
-    return{
-      width: '100%',
-      border: '1px solid #000',
-      borderCollapse: 'collapse'
-    };
-  }
+  // getStyle(): React.CSSProperties {
+  //   return{
+  //     width: '100%',
+  //     border: '1px solid #000',
+  //     borderCollapse: 'collapse'
+  //   };
+  // }
 
   render(): JSX.Element {
     return (
-      <table style={this.getStyle()}>
+      <table>
         <thead>
           <Row key={`row-0`} rownum={0} rowcontents={this.props.contents[0]} />
         </thead>

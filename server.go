@@ -11,15 +11,15 @@ func main() {
 	r := gin.Default()
 
 	// HTML files
-	r.LoadHTMLFiles("main.html", "index.html")
+	r.LoadHTMLFiles("index.html")
 
 	// Assets
 	r.Use(static.Serve("/", static.LocalFile("./dist", false)))
-	r.Use(static.Serve("/tables", static.LocalFile("./dist", false)))
+	// r.Use(static.Serve("/tables", static.LocalFile("./dist", false)))
 
 	// Main ページ
 	r.GET("/", func(c *gin.Context) {
-		c.HTML(200, "main.html", nil)
+		c.HTML(200, "index.html", nil)
 	})
 
 	r.POST("/tables/create", func(c *gin.Context) {
@@ -30,7 +30,7 @@ func main() {
 
 	// Serve Each Table Page
 	r.GET("/tables/:tableid", func(c *gin.Context) {
-		c.HTML(200, "main.html", nil)
+		c.HTML(200, "index.html", nil)
 	})
 	r.Run()
 }

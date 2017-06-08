@@ -5,15 +5,17 @@ import Table from './components/Table/Table';
 import TextArea from './components/TextArea/TextArea';
 import Title from './components/Title/Title';
 
-class Index extends React.Component <void, void> {
+interface IndexProps {}
+
+class Index extends React.Component <IndexProps, void> {
   constructor() {
     super();
   }
 
   getTable(): any[] {
     const row: any[] = [];
-    for (let i: number = 1; i < 2; i++) {
-      row.push([i, 'aaa', 'bbb']);
+    for (let i: number = 1; i < 3; i++) {
+      row.push([i, 'aaa', 'bbb', 'cccc']);
     }
     return row;
   }
@@ -40,7 +42,6 @@ class Index extends React.Component <void, void> {
       );
     }
   }
-
 
   render(): JSX.Element {
     return (

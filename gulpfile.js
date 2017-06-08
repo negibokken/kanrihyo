@@ -3,6 +3,7 @@ const webpack = require('gulp-webpack');
 const tslint = require('gulp-tslint');
 const exec = require('gulp-exec');
 const del = require('del');
+const ps = require('child_process').exec
 
 gulp.task('tslint', () => {
     let format = {
@@ -15,8 +16,10 @@ gulp.task('tslint', () => {
 });
 
 gulp.task('webpack', ['clean', 'tslint'], function () {
-  return webpack(require('./webpack.config'))
-    .pipe(gulp.dest('./dist'));
+  const command = 'webpack'
+  return ps(command, (err, stdout, stderr) => {
+      console.log(stdout + stderr)
+  });
 });
 
 gulp.task('build', ['webpack'], function() {

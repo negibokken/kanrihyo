@@ -19,10 +19,20 @@
                 </div>
             </nav>
         </header>
+
         <main>
-            <div class="container">
-                <div id="index"></div>
-                <script src="bundle.js"></script>
+            <img class="logo-image" src="logo.png" height=200 />
+            <center>please make logo (also favicon) for this app!! (hkt-san) </center>
+            <div class="main-container">
+                <div class="col-lg-6">
+                    <div class="catchy-word"> Effective management table for you ... </div>
+                    <form class="input-group" action="http://localhost:8080/tables/create" method="post">
+                        <input type="text" name="table-name" class="form-control form-control-lg" placeholder="Enter table title ..." autofocus>
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary">Create Table</button>
+                        </span>
+                    </form>
+                </div>
             </div>
         </main>
 

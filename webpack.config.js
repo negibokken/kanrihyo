@@ -1,33 +1,31 @@
+'use strict';
+const path = require('path');
+
 module.exports = {
   entry: [
-    "./src/index.tsx",
+    './src/'
   ],
   output: {
-    filename: "bundle.js",
-    path: __dirname + "dist"
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist')
   },
-
-  devtool: "soruce-map",
-
+  devtool: 'soruce-map',
   resolve: {
-    extensions: ["", ".webpack.js ", ".web.js ", ".ts ", ".tsx", ".js"]
+    extensions: ['.config.js ', '.web.js ', '.ts ', '.tsx', '.js', '.html', '.css']
   },
-
+  context: __dirname,
+  target: 'web',
   module: {
-    loaders: [
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-      { test: /\.css?$/, loaders: ["style", 'css', 'sass'] },
-      { test: /\.(jpeg|jpg|png)?$/, loaders: 'url-loader' }
-    ],
-
-    preLoaders: [{
-      test: /\.js$/,
-      loader: "source-map-loader"
-    }],
-
-    externals: {
-      "react": "React",
-      "react-dom": "ReactDOM"
-    }
+    rules: [
+      { test: /\.tsx?$/, use: 'awesome-typescript-loader' },
+      { test: /\.css$/, use: 'css-loader' },
+    ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname),
+    compress: true,
+    port: 8088,
+    hot: true,
+    inline: true
   }
-}
+};
