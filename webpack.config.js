@@ -7,11 +7,12 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'dist')
+    path: path.join(__dirname, 'dist'),
+    publicPath: ''
   },
   devtool: 'soruce-map',
   resolve: {
-    extensions: ['.config.js ', '.web.js ', '.ts ', '.tsx', '.js', '.html', '.css']
+    extensions: ['.config.js ', '.web.js ', '.ts ', '.tsx', '.js', '.html', '.css'],
   },
   context: __dirname,
   target: 'web',
