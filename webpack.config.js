@@ -12,7 +12,7 @@ module.exports = {
   },
   devtool: 'soruce-map',
   resolve: {
-    extensions: ['.config.js ', '.web.js ', '.ts ', '.tsx', '.js', '.html', '.css'],
+    extensions: ['.config.js ', '.ts ', '.tsx', '.js', '.html', '.css'],
   },
   context: __dirname,
   target: 'web',
