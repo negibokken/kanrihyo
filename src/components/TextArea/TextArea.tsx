@@ -21,8 +21,8 @@ export default class TextArea extends React.Component <ITextAreaProps, ITextArea
   render(): any {
     const {rows, cols}: any = this.props;
     return (
-      <div className='row'>
-        <textarea rows={rows} cols={cols} />
+      <div>
+        <textarea className="textarea" rows={rows} cols={cols} />
       </div>
     );
   }
