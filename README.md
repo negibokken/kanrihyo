@@ -34,6 +34,7 @@
 ### Debug
 
 * Execute `npm run debug`
+    * And access `http://localhost:8080`
 
 ### Hot Module Replacement
 
