@@ -46,8 +46,8 @@ export default class Cell extends React.Component <ICellProps, ICellState> {
     const {text, rownum, colnum}: any = this.props;
     return (
       rownum === 0 ?
-      <th className="row-th" style={this.getStyle()} onClick={this.onClick.bind(this)}>{this.setInput()}</th> :
-      <td className="row-td" style={this.getStyle()} onClick={this.onClick.bind(this)}>{this.setInput()}</td>
+      <th className='row-th' style={this.getStyle()} onClick={this.onClick.bind(this)}>{this.setInput()}</th> :
+      <td className='row-td' style={this.getStyle()} onClick={this.onClick.bind(this)}>{this.setInput()}</td>
     );
   }
 }

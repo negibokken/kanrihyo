@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.tsx?$/, use: 'awesome-typescript-loader' },
-      { test: /\.css$/, use: 'css-loader' },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
     ]
   },
   devServer: {

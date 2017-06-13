@@ -22,7 +22,7 @@ export default class TextArea extends React.Component <ITextAreaProps, ITextArea
     const {rows, cols}: any = this.props;
     return (
       <div>
-        <textarea className="textarea" rows={rows} cols={cols} />
+        <textarea className='textarea' rows={rows} cols={cols} />
       </div>
     );
   }

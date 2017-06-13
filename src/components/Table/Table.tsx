@@ -20,7 +20,7 @@ export default class Table extends React.Component <ITableProps, ITableState> {
   setBody(): JSX.Element[] {
     const contents: any = this.props;
     const rows: JSX.Element[] = [];
-    console.log(this.props.contents)
+    console.log(this.props.contents);
     this.props.contents.map((cur, idx) => {
       if (idx !== 0) {
         rows.push (
