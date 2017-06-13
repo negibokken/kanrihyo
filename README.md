@@ -31,6 +31,10 @@
       $ npm run build
       ```
 
+### Debug
+
+* Execute `npm run debug`
+
 ### Hot Module Replacement
 
 * Execute webpack-dev-server
