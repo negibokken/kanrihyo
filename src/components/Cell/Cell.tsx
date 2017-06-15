@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import * as style from './Cell.css';
 
 interface ICellProps {
   rownum: number;
@@ -17,15 +18,16 @@ export default class Cell extends React.Component <ICellProps, ICellState> {
     super();
   }
 
-  getStyle(): any {
-    return {
-      border: '1px solid #000'
-    };
-  }
+  // getStyle(): any {
+  //   return {
+  //     border: '1px solid #000'
+  //   };
+  // }
 
   onClick(): any {
     console.log(this.props.rownum);
     console.log(this.props.colnum);
+    console.log(style);
   }
 
   onChange(): any {
@@ -46,8 +48,8 @@ export default class Cell extends React.Component <ICellProps, ICellState> {
     const {text, rownum, colnum}: any = this.props;
     return (
       rownum === 0 ?
-      <th className='row-th' style={this.getStyle()} onClick={this.onClick.bind(this)}>{this.setInput()}</th> :
-      <td className='row-td' style={this.getStyle()} onClick={this.onClick.bind(this)}>{this.setInput()}</td>
+      <th className='row-th' onClick={this.onClick.bind(this)}>{this.setInput()}</th> :
+      <td className='row-td' onClick={this.onClick.bind(this)}>{this.setInput()}</td>
     );
   }
 }
