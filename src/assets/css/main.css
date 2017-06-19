@@ -28,6 +28,7 @@ body {
   margin-right: 20px;
 }
 
+/* footer */
 .footer {
     position: absolute;
     bottom: 0;
@@ -42,18 +43,17 @@ body {
 /*    position: relative;*/
 }
 
+footer p.text-muted {
+  margin: 3px;
+}
+
+/* main */
 main {
   display: block;
   width: 100%;
 }
 
-.logo-image { /* research using place */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.main-container {
+.container {
   position: absolute;
   top: 0;
   right: 0;
@@ -74,10 +74,12 @@ main {
   height: 100px;
 }
 
-.catchy-word {
+.catchy-word { /* research using place */
   margin-bottom: 10px;
 }
 
-footer p.text-muted {
-  margin: 3px;
+.logo-image { /* research using place */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
