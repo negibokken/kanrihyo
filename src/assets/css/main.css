@@ -11,6 +11,23 @@ body {
   min-height: 100%;
 }
 
+/* header */
+.header {
+}
+
+.header-container {
+}
+
+.header-title {
+}
+
+.header-description {
+}
+
+.header-help {
+  margin-right: 20px;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -30,7 +47,7 @@ main {
   width: 100%;
 }
 
-.logo-image {
+.logo-image { /* research using place */
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -63,8 +80,4 @@ main {
 
 footer p.text-muted {
   margin: 3px;
-}
-
-.navbar-right {
-  margin-right: 20px;
 }
