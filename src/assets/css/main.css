@@ -13,12 +13,25 @@ body {
 
 /* header */
 .header {
+  background-color: #41464f;
 }
 
 .header-container {
+  min-width: 768px; /* need? */
+  max-width: 980px; /* github */
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-detail {
+  display: flex;
 }
 
 .header-title {
+  margin-right: 20px;
 }
 
 .header-description {
@@ -26,6 +39,19 @@ body {
 
 .header-help {
   margin-right: 20px;
+}
+
+.header-text {
+  color: #ffffff;
+}
+
+.header-link {
+  color: rgba(255,255,255,0.75);
+}
+
+.header-link:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 /* footer */
