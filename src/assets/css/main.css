@@ -24,12 +24,15 @@ body {
 /* header */
 .header {
   background-color: #41464f;
+  padding: 12px 0;
 }
 
 .header-container {
   min-width: 768px; /* need? */
   max-width: 980px; /* github */
-  height: 40px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
