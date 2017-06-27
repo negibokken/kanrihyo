@@ -1,0 +1,23 @@
+{
+    "version": "0.1.0",
+    "tasks": [
+        {
+            "taskName": "build",
+            "command": "gulp",
+            "showOutput": "never",
+            "args": [
+               "build"
+            ],
+            "isShellCommand": true
+        },
+        {
+            "taskName": "clean",
+            "command": "gulp",
+            "showOutput": "never",
+            "args": [
+               "clean"
+            ],
+            "isShellCommand": true
+        }
+    ]
+}

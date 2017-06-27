@@ -1,0 +1,5 @@
+{
+  "vsicons.presets.angular": false,
+  "eslint.enable": false,
+  "tslint.enable": false
+}
