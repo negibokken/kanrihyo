@@ -26,7 +26,6 @@ export default class Cell extends React.Component <ICellProps, ICellState> {
   onClick(): any {
     console.log(this.props.rownum);
     console.log(this.props.colnum);
-    console.log(style);
   }
 
   onChange(): any {
