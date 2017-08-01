@@ -24,10 +24,10 @@ class Index extends React.Component <IndexProps, void> {
     return false;
   }
 
-  returnElement(): JSX.Element {
+  render(): JSX.Element {
     if (this.isTop()) {
       return (
-        <div style={{margin: 'auto', position: 'relative', width: '100%'}}>
+        <div>
           <input className='main-input' />
           <button type='submit'>Create</button>
         </div>
@@ -35,20 +35,12 @@ class Index extends React.Component <IndexProps, void> {
     } else {
       return (
         <div>
-          <Title title='title' />
-          <TextArea rows={4} cols={80} />
-          <Table contents={this.getTable()} />
+          <Title key='title' title='title' />
+          <TextArea key='textarea' rows={4} cols={80} />
+          <Table key='table' contents={this.getTable()} />
         </div>
       );
     }
-  }
-
-  render(): JSX.Element {
-    return (
-      <div className='contents'>
-        {this.returnElement()}
-      </div>
-    );
   }
 }
 
