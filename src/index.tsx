@@ -45,7 +45,7 @@ class Index extends React.Component <IndexProps, void> {
 
   render(): JSX.Element {
     return (
-      <div className='index' style={{width: '100%'}}>
+      <div className='contents'>
         {this.returnElement()}
       </div>
     );
