@@ -27,18 +27,18 @@ class Index extends React.Component <IndexProps, void> {
   render(): JSX.Element {
     if (this.isTop()) {
       return (
-          <div>
-            <input className='main-input' />
-            <button type='submit'>Create</button>
-          </div>
+        <div>
+          <input className='main-input' />
+          <button type='submit'>Create</button>
+        </div>
       );
     } else {
       return (
-          <div>
-            <Title key='title' title='title' />
-            <TextArea key='textarea' rows={4} cols={80} />
-            <Table key='table' contents={this.getTable()} />
-          </div>
+        <div>
+          <Title key='title' title='title' />
+          <TextArea key='textarea' rows={4} cols={80} />
+          <Table key='table' contents={this.getTable()} />
+        </div>
       );
     }
   }
