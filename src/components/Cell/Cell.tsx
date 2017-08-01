@@ -26,7 +26,6 @@ export default class Cell extends React.Component <ICellProps, ICellState> {
   onClick(): any {
     console.log(this.props.rownum);
     console.log(this.props.colnum);
-    console.log(style);
   }
 
   onChange(): any {
@@ -35,20 +34,16 @@ export default class Cell extends React.Component <ICellProps, ICellState> {
 
   setInput(): JSX.Element {
     return (
-      this.props.input ?
-        <input type='text' value={this.props.text} onChange={this.onChange.bind(this)}/> :
-        <div>
-          {this.props.text}
-        </div>
+        <input type='text' value={this.props.text} onChange={this.onChange.bind(this)}/>
     );
   }
 
   render(): JSX.Element {
-    const {text, rownum, colnum}: any = this.props;
+    const {input, text, rownum, colnum}: any = this.props;
     return (
       rownum === 0 ?
-      <th className='row-th' onClick={this.onClick.bind(this)}>{this.setInput()}</th> :
-      <td className='row-td' onClick={this.onClick.bind(this)}>{this.setInput()}</td>
+      <th className='row-th' onClick={this.onClick.bind(this)}>{input ? this.setInput() : text}</th> :
+      <td className='row-td' onClick={this.onClick.bind(this)}>{input ? this.setInput() : text}</td>
     );
   }
 }

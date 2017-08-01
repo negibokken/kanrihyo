@@ -24,31 +24,23 @@ class Index extends React.Component <IndexProps, void> {
     return false;
   }
 
-  returnElement(): JSX.Element {
+  render(): JSX.Element {
     if (this.isTop()) {
       return (
-        <div style={{margin: 'auto', position: 'relative', width: '100%'}}>
-          <input className='main-input' />
-          <button type='submit'>Create</button>
-        </div>
+          <div>
+            <input className='main-input' />
+            <button type='submit'>Create</button>
+          </div>
       );
     } else {
       return (
-        <div>
-          <Title title='title' />
-          <TextArea rows={4} cols={80} />
-          <Table contents={this.getTable()} />
-        </div>
+          <div>
+            <Title key='title' title='title' />
+            <TextArea key='textarea' rows={4} cols={80} />
+            <Table key='table' contents={this.getTable()} />
+          </div>
       );
     }
-  }
-
-  render(): JSX.Element {
-    return (
-      <div className='index' style={{width: '100%'}}>
-        {this.returnElement()}
-      </div>
-    );
   }
 }
 
