@@ -36,17 +36,6 @@
 * Execute `npm run debug`
     * And access `http://localhost:8080`
 
-### Hot Module Replacement
-
-* Execute webpack-dev-server
-    ```
-    $ webpack-dev-server --hot --inline
-    ```
-
-* Access below pages (under constructed)
-  - `http://localhost:8088/` to access index.html
-      - and enter table name in form of index.html. Then you can see table page.
-
 ## License
 
 MIT
