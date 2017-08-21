@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import * as Store from './components/Store/Store';
 import Table from './components/Table/Table';
 import TextArea from './components/TextArea/TextArea';
 import Title from './components/Title/Title';
@@ -33,6 +34,7 @@ class Index extends React.Component <IndexProps, void> {
         </div>
       );
     } else {
+      console.log(Store.store.getState());
       return (
         <div>
           <Title key='title' title='title' />

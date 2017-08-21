@@ -17,12 +17,6 @@ export default class Cell extends React.Component <ICellProps, ICellState> {
     super();
   }
 
-  // getStyle(): any {
-  //   return {
-  //     border: '1px solid #000'
-  //   };
-  // }
-
   onClick(): any {
     console.log(this.props.rownum);
     console.log(this.props.colnum);
