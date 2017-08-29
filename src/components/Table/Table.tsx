@@ -41,7 +41,7 @@ export default class Table extends React.Component <ITableProps, ITableState> {
 
   render(): JSX.Element {
     return (
-      <table>
+      <table className='table'>
         <thead>
           <Row key={`row-0`} rownum={0} rowcontents={this.props.contents[0]} />
         </thead>
