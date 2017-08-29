@@ -139,3 +139,27 @@ main {
 ::-webkit-input-placeholder {
     color: #848284;
 }
+
+.table {
+/*  border: 1px solid #eceeef;*/
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+.table td, .table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+  vertical-align: bottom;
+  border-bottom: 2px solid #eceeef;
+}
+
+tr {
+  background-color: #ffffff;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}

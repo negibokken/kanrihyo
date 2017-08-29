@@ -14,7 +14,7 @@ class Index extends React.Component <IndexProps, void> {
 
   getTable(): any[] {
     const row: any[] = [];
-    for (let i: number = 1; i < 3; i++) {
+    for (let i: number = 1; i < 7; i++) {
       row.push([i, 'aaa', 'bbb', 'cccc']);
     }
     return row;
