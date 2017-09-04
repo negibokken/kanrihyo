@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 
 import * as Store from './components/Store/Store';
 import Table from './components/Table/Table';
@@ -8,7 +9,7 @@ import Title from './components/Title/Title';
 
 interface IndexProps {}
 
-class Index extends React.Component <IndexProps, void> {
+class Index extends React.Component <IndexProps, {}> {
   constructor() {
     super();
   }
@@ -46,7 +47,14 @@ class Index extends React.Component <IndexProps, void> {
   }
 }
 
+// connect(
+//   () => { /* */ },
+//   () => { /* */ }
+// )(Index);
+
 ReactDOM.render(
-  <Index />,
+  <Provider store={Store.store}>
+    <Index />
+  </Provider>,
   document.getElementById('index')
 );

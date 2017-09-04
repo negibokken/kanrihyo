@@ -1,10 +1,24 @@
 import { createStore } from 'redux';
+import { toggle } from '../Cell/Cell';
+
+export type ReduxState = {
+    counter: any ;
+};
+
+export type ReduxAction = any;
 
 export function reducer(state: any, action: any): any {
   return state;
 }
 
 export const store: any = createStore(reducer, {todo: []});
+
+export class ActionDispatcher {
+  constructor(private dispatch: (action: ReduxAction) => void) {}
+  public toggleCellStatus(): void {
+    this.dispatch(toggle());
+  }
+}
 
 // http://developers.mobage.jp/blog/redux-basic
 // 1. make action (type)
