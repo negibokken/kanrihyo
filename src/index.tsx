@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 
-import * as Store from './components/Store/Store';
+import {store} from './components/Store/Store';
 import {Table} from './components/Table/Table';
 import TextArea from './components/TextArea/TextArea';
 import Title from './components/Title/Title';
@@ -35,7 +35,7 @@ class Index extends React.Component <any, {}> {
         </div>
       );
     } else {
-      console.log(Store.store.getState());
+      console.log(store.getState());
       return (
         <div>
           <Title key='title' title='title' />
@@ -47,13 +47,8 @@ class Index extends React.Component <any, {}> {
   }
 }
 
-// connect(
-//   () => { /* */ },
-//   () => { /* */ }
-// )(Index);
-
 ReactDOM.render(
-  <Provider store={Store.store}>
+  <Provider store={store}>
     <Index />
   </Provider>,
   document.getElementById('index')

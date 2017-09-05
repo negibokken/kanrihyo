@@ -20,7 +20,7 @@ export class Table extends React.Component <any, {}> {
   setBody(): JSX.Element[] {
     const contents: any = this.props;
     const rows: JSX.Element[] = [];
-    console.log(this.props.contents);
+    // console.log(this.props.contents);
     this.props.contents.map((cur: string[], idx: number) => {
       if (idx !== 0) {
         rows.push (
