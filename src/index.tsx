@@ -3,13 +3,13 @@ import * as ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 
 import * as Store from './components/Store/Store';
-import Table from './components/Table/Table';
+import {Table} from './components/Table/Table';
 import TextArea from './components/TextArea/TextArea';
 import Title from './components/Title/Title';
 
 interface IndexProps {}
 
-class Index extends React.Component <IndexProps, {}> {
+class Index extends React.Component <any, {}> {
   constructor() {
     super();
   }
