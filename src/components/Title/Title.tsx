@@ -1,15 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-interface ITitleProps {
+interface TitleProps {
   title: string;
 };
 
-interface ITitleState {
-};
-
-export default class Title extends React.Component <ITitleProps, ITitleState> {
-  constructor(props: ITitleProps) {
+export class Title extends React.Component <TitleProps, {}> {
+  constructor() {
     super();
   }
 

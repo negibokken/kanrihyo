@@ -3,16 +3,13 @@ import * as ReactDOM from 'react-dom';
 
 import Cell from '../Cell/Cell';
 
-interface IRowProps {
+interface RowProps {
   key: string;
   rowcontents: string[];
   rownum: number;
 };
 
-interface IRowState {
-};
-
-export default class Row extends React.Component <IRowProps, {}> {
+export default class Row extends React.Component <RowProps, {}> {
   constructor() {
     super();
   }

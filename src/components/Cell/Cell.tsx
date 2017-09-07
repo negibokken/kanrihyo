@@ -2,18 +2,15 @@ import * as $ from 'jquery';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-interface ICellProps {
+interface CellProps {
   rownum: number;
   colnum: number;
   text: string;
   input: boolean;
 };
 
-interface ICellState {
-};
-
-export default class Cell extends React.Component <ICellProps, ICellState> {
-  constructor(props: ICellProps) {
+export default class Cell extends React.Component <CellProps, {}> {
+  constructor(props: CellProps) {
     super();
   }
 

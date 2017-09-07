@@ -4,11 +4,11 @@ enum ActionNames {
   TOG = 'cell/toggle',
 };
 
-interface ToggleAction extends Action {
+export interface ToggleAction extends Action {
   type: ActionNames.TOG;
 }
 
-export const toggleCellStatus = (): ToggleAction => ({
+export const toggleCellStatus: any = (): ToggleAction => ({
   type: ActionNames.TOG,
 });
 
@@ -23,7 +23,7 @@ const initialState: TableState = {
 };
 
 export default function reducer(state: TableState = initialState, action: TableAction): TableState {
-  switch(action.type) {
+  switch (action.type) {
     case ActionNames.TOG:
       return Object.assign({}, state, {input: !state.input});
     default:
