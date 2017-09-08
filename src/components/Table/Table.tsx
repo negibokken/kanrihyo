@@ -13,6 +13,7 @@ interface TableProps {
 // export class Table extends React.Component <TableProps, {}> {
 export class Table extends React.Component <TableProps, {}> {
   constructor() {
+
     super();
   }
 
