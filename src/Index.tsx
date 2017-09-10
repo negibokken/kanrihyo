@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
 import store from './components/Store/Store';
-import Table from './components/Table/Countainer';
-import {TextArea} from './components/TextArea/TextArea';
-import {Title} from './components/Title/Title';
+import Table from './components/Table/Container';
+import { TextArea } from './components/TextArea/TextArea';
+import { Title } from './components/Title/Title';
 
 // interface IndexProps {
 //   value: any;

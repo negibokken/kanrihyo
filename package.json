@@ -30,6 +30,7 @@
     "gulp-tslint": "^7.1.0",
     "gulp-webpack": "^1.5.0",
     "htmlhint": "0.9.13",
+    "prettier": "^1.6.1",
     "sass-loader": "^6.0.3",
     "source-map-loader": "0.1.5",
     "style-loader": "^0.18.2",

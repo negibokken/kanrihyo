@@ -1,31 +1,54 @@
-import {Action} from 'redux';
+import { Action } from 'redux';
 
 enum ActionNames {
-  TOG = 'cell/toggle',
-};
+  TOG = 'cell/toggle'
+}
 
 export interface ToggleAction extends Action {
   type: ActionNames.TOG;
+  rownum?: number;
+  colnum?: number;
 }
 
-export const toggleCellStatus: any = (): ToggleAction => ({
+export const toggleCellStatus: any = (
+  rownum: number,
+  colnum: number
+): ToggleAction => ({
   type: ActionNames.TOG,
+  rownum: rownum,
+  colnum: colnum
 });
 
 export type TableAction = ToggleAction;
 
 export interface TableState {
-  input: boolean;
-};
+  input: boolean[][];
+  contents: string[][];
+}
 
 const initialState: TableState = {
-  input: false,
+  input: [[false, false, false, false], [false, false, false, false]],
+  contents: [
+    ['ID', 'Title', 'Author', 'Date'],
+    ['1', 'Test', 'taro', '2010/01/01']
+  ]
 };
 
-export default function reducer(state: TableState = initialState, action: TableAction): TableState {
+export default function reducer(
+  state: TableState = initialState,
+  action: TableAction
+): TableState {
   switch (action.type) {
     case ActionNames.TOG:
-      return Object.assign({}, state, {input: !state.input});
+      console.log(state);
+      let input: boolean[][] = state.input.slice();
+      input.map((inpu, i) =>
+        inpu.map((inp, j) => {
+          input[i][j] = false;
+        })
+      );
+      input[action.rownum || 0][action.colnum || 0] = true;
+      return Object.assign({}, state, { input });
     default:
       return state;
   }

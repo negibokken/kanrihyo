@@ -1,10 +1,10 @@
-import {combineReducers, createStore,  Action} from 'redux';
-import {TableAction, TableState} from '../Table/module';
-import toggle from '../Table/module';
+import { combineReducers, createStore, Action } from 'redux';
+import { TableAction, TableState } from '../Table/module';
+import table from '../Table/module';
 
 export default createStore(
   combineReducers({
-    toggle,
+    table
   })
 );
 
