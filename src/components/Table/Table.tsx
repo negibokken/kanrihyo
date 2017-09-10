@@ -26,6 +26,7 @@ export class Table extends React.Component<TableProps, {}> {
             key={`row-${idx}`}
             rownum={idx}
             rowcontents={con}
+            input={this.props.value.input[idx]}
             actions={actions}
           />
         );

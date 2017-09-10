@@ -8,6 +8,7 @@ interface RowProps {
   key: string;
   rowcontents: string[];
   rownum: number;
+  input?: boolean[];
   actions?: ActionDispatcher;
 }
 
@@ -18,6 +19,7 @@ export default class Row extends React.Component<RowProps, {}> {
 
   setCells(): JSX.Element[] {
     const { rownum, rowcontents }: any = this.props;
+    const input: boolean[] = this.props.input || [];
     const actions: any = this.props.actions;
     const cells: JSX.Element[] = [];
     this.props.rowcontents.map((cur, idx) => {
@@ -27,6 +29,7 @@ export default class Row extends React.Component<RowProps, {}> {
           rownum={rownum}
           colnum={idx}
           text={cur}
+          input={input[idx]}
           actions={actions}
         />
       );

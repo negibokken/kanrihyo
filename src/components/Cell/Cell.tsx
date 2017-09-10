@@ -9,6 +9,7 @@ interface CellProps {
   rownum: number;
   colnum: number;
   text: string;
+  input?: boolean;
   actions: ActionDispatcher;
 }
 
@@ -20,7 +21,9 @@ export default class Cell extends React.Component<CellProps, {}> {
   onDoubleClick(): any {
     console.log(this.props.rownum);
     console.log(this.props.colnum);
-    this.props.actions.toggle(this.props.rownum, this.props.colnum);
+    if (this.props.actions !== undefined) {
+      this.props.actions.toggle(this.props.rownum, this.props.colnum);
+    }
   }
 
   onChange(): any {
@@ -38,7 +41,7 @@ export default class Cell extends React.Component<CellProps, {}> {
   }
 
   render(): JSX.Element {
-    const input: boolean = false;
+    const input: boolean = this.props.input || false;
     const { text, rownum, colnum }: any = this.props;
     return rownum === 0 ? (
       <th className="row-th" onDoubleClick={this.onDoubleClick.bind(this)}>
