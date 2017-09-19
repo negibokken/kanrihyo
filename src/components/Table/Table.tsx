@@ -1,53 +1,48 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import { TableState } from '../../module';
 import Row from '../Row/Row';
+import { ActionDispatcher } from '../Store/Store';
 
-type Content = any;
+interface TableProps {
+  value: TableState;
+  actions: ActionDispatcher;
+}
 
-interface ITableProps {
-  contents: Content[];
-};
-
-interface ITableState {
-};
-
-export default class Table extends React.Component <ITableProps, ITableState> {
-  constructor(props: ITableProps) {
+export class Table extends React.Component<TableProps, {}> {
+  constructor() {
     super();
   }
 
   setBody(): JSX.Element[] {
-    const contents: any = this.props;
+    const contents: string[][] = this.props.value.contents;
+    const actions: any = this.props.actions;
     const rows: JSX.Element[] = [];
-    console.log(this.props.contents);
-    this.props.contents.map((cur, idx) => {
+    contents.map((con: string[], idx: number) => {
       if (idx !== 0) {
-        rows.push (
-          <Row key={`row-${idx}`} rownum={idx} rowcontents={cur} />
+        rows.push(
+          <Row
+            key={`row-${idx}`}
+            rownum={idx}
+            rowcontents={con}
+            input={this.props.value.input[idx]}
+            actions={actions}
+          />
         );
       }
     });
     return rows;
   }
 
-  // getStyle(): React.CSSProperties {
-  //   return{
-  //     width: '100%',
-  //     border: '1px solid #000',
-  //     borderCollapse: 'collapse'
-  //   };
-  // }
-
   render(): JSX.Element {
+    const contents: string[][] = this.props.value.contents;
     return (
-      <table className='table'>
+      <table className="table">
         <thead>
-          <Row key={`row-0`} rownum={0} rowcontents={this.props.contents[0]} />
+          <Row key={'row-0'} rownum={0} rowcontents={contents[0]} />
         </thead>
-        <tbody>
-          {this.setBody()}
-        </tbody>
+        <tbody>{this.setBody()}</tbody>
       </table>
     );
   }

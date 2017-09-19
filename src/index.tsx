@@ -1,23 +1,26 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { connect, Provider } from 'react-redux';
+import { Dispatch } from 'redux';
 
-import Table from './components/Table/Table';
-import TextArea from './components/TextArea/TextArea';
-import Title from './components/Title/Title';
+import store, {
+  ActionDispatcher,
+  ReduxAction,
+  ReduxState
+} from './components/Store/Store';
+import { Table } from './components/Table/Table';
+import { TextArea } from './components/TextArea/TextArea';
+import { Title } from './components/Title/Title';
+import { TableState } from './module';
 
-interface IndexProps {}
+interface IndexProps {
+  value: any;
+  actions: any;
+}
 
-class Index extends React.Component <IndexProps, void> {
+export class Index extends React.Component<IndexProps, any> {
   constructor() {
     super();
-  }
-
-  getTable(): any[] {
-    const row: any[] = [];
-    for (let i: number = 1; i < 7; i++) {
-      row.push([i, 'aaa', 'bbb', 'cccc']);
-    }
-    return row;
   }
 
   isTop(): boolean {
@@ -28,23 +31,34 @@ class Index extends React.Component <IndexProps, void> {
     if (this.isTop()) {
       return (
         <div>
-          <input className='main-input' />
-          <button type='submit'>Create</button>
+          <input className="main-input" />
+          <button type="submit">Create</button>
         </div>
       );
     } else {
       return (
         <div>
-          <Title key='title' title='title' />
-          <TextArea key='textarea' rows={4} cols={80} />
-          <Table key='table' contents={this.getTable()} />
+          <Title key="title" title="title" />
+          <TextArea key="textarea" rows={4} cols={80} />
+          <Table {...this.props} />
         </div>
       );
     }
   }
 }
 
+const Countainer: any = connect(
+  (state: ReduxState) => {
+    return { value: state.table };
+  },
+  (dispatch: Dispatch<ReduxAction>) => {
+    return { actions: new ActionDispatcher(dispatch) };
+  }
+)(Index);
+
 ReactDOM.render(
-  <Index />,
+  <Provider store={store}>
+    <Countainer />
+  </Provider>,
   document.getElementById('index')
 );

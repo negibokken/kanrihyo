@@ -1,17 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-interface ITextAreaProps {
+interface TextAreaProps {
   rows: number;
   cols: number;
-};
+}
 
-interface ITextAreaState {
-};
-
-export default class TextArea extends React.Component <ITextAreaProps, ITextAreaState> {
-  constructor(props: ITextAreaProps) {
-    super(props);
+export class TextArea extends React.Component<TextAreaProps, {}> {
+  constructor() {
+    super();
   }
 
   _onChange(): any {
@@ -19,9 +16,14 @@ export default class TextArea extends React.Component <ITextAreaProps, ITextArea
   }
 
   render(): any {
-    const {rows, cols}: any = this.props;
+    const { rows, cols }: any = this.props;
     return (
-      <textarea className='description' rows={rows} cols={cols} placeholder='キーワードを入力してください' />
+      <textarea
+        className="description"
+        rows={rows}
+        cols={cols}
+        placeholder="キーワードを入力してください"
+      />
     );
   }
 }
