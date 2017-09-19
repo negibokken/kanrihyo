@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import { TableState } from '../../module';
 import Row from '../Row/Row';
-import { TableState } from './module';
-import { ActionDispatcher } from './Container';
+import { ActionDispatcher } from '../Store/Store';
 
 interface TableProps {
   value: TableState;

@@ -1,6 +1,6 @@
 import { combineReducers, createStore, Action } from 'redux';
-import { TableAction, TableState } from '../Table/module';
-import table from '../Table/module';
+
+import table, { toggleCellStatus, TableAction, TableState } from '../../module';
 
 export default createStore(
   combineReducers({
@@ -13,3 +13,13 @@ export type ReduxState = {
 };
 
 export type ReduxAction = TableAction | Action;
+
+export class ActionDispatcher {
+  constructor(private dispatch: (action: ReduxAction) => void) {
+    this.dispatch = dispatch;
+  }
+
+  public toggle(rownum: number, colnum: number): any {
+    this.dispatch(toggleCellStatus(rownum, colnum));
+  }
+}

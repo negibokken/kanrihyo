@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import Cell from '../Cell/Cell';
-import { ActionDispatcher } from '../Table/Container';
+import { ActionDispatcher } from '../Store/Store';
 
 interface RowProps {
   key: string;
