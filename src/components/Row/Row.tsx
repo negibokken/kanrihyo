@@ -31,7 +31,7 @@ export default class Row extends React.Component<RowProps, {}> {
           text={cur}
           input={input[idx]}
           actions={actions}
-        />
+        />,
       );
     });
     return cells;

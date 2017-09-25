@@ -1,11 +1,11 @@
 import { combineReducers, createStore, Action } from 'redux';
 
-import table, { toggleCellStatus, TableAction, TableState } from '../../module';
+import table, { resetCells, toggleCellStatus, TableAction, TableState } from '../../module';
 
 export default createStore(
   combineReducers({
-    table
-  })
+    table,
+  }),
 );
 
 export type ReduxState = {
@@ -19,7 +19,11 @@ export class ActionDispatcher {
     this.dispatch = dispatch;
   }
 
-  public toggle(rownum: number, colnum: number): any {
+  public toggle(rownum: number, colnum: number): void {
     this.dispatch(toggleCellStatus(rownum, colnum));
+  }
+
+  public reset(): void {
+    this.dispatch(resetCells());
   }
 }

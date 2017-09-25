@@ -3,11 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { connect, Provider } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import store, {
-  ActionDispatcher,
-  ReduxAction,
-  ReduxState
-} from './components/Store/Store';
+import store, { ActionDispatcher, ReduxAction, ReduxState } from './components/Store/Store';
 import { Table } from './components/Table/Table';
 import { TextArea } from './components/TextArea/TextArea';
 import { Title } from './components/Title/Title';
@@ -53,12 +49,12 @@ const Countainer: any = connect(
   },
   (dispatch: Dispatch<ReduxAction>) => {
     return { actions: new ActionDispatcher(dispatch) };
-  }
+  },
 )(Index);
 
 ReactDOM.render(
   <Provider store={store}>
     <Countainer />
   </Provider>,
-  document.getElementById('index')
+  document.getElementById('index'),
 );

@@ -18,12 +18,7 @@ export class TextArea extends React.Component<TextAreaProps, {}> {
   render(): any {
     const { rows, cols }: any = this.props;
     return (
-      <textarea
-        className="description"
-        rows={rows}
-        cols={cols}
-        placeholder="キーワードを入力してください"
-      />
+      <textarea className="description" rows={rows} cols={cols} placeholder="キーワードを入力してください" />
     );
   }
 }

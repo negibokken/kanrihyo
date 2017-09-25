@@ -15,6 +15,14 @@ export class Table extends React.Component<TableProps, {}> {
     super();
   }
 
+  componentDidMount(): void {
+    addEventListener('keyup', e => {
+      if (e.key === 'Escape') {
+        this.props.actions.reset();
+      }
+    });
+  }
+
   setBody(): JSX.Element[] {
     const contents: string[][] = this.props.value.contents;
     const actions: any = this.props.actions;
@@ -28,7 +36,7 @@ export class Table extends React.Component<TableProps, {}> {
             rowcontents={con}
             input={this.props.value.input[idx]}
             actions={actions}
-          />
+          />,
         );
       }
     });
