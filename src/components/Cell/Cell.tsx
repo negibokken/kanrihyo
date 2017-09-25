@@ -19,15 +19,14 @@ export default class Cell extends React.Component<CellProps, {}> {
   }
 
   onDoubleClick(): any {
-    console.log(this.props.rownum);
-    console.log(this.props.colnum);
     if (this.props.actions !== undefined) {
       this.props.actions.toggle(this.props.rownum, this.props.colnum);
     }
   }
 
-  onChange(): any {
-    // pass dispatcher
+  onChange(e: any): any {
+    const { rownum, colnum }: any = this.props;
+    this.props.actions.change(rownum, colnum, e.target.value);
   }
 
   setInput(): JSX.Element {

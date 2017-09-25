@@ -3,12 +3,13 @@ import { Action } from 'redux';
 enum ActionNames {
   TOG = 'cell/toggle',
   RESET = 'cell/reset',
+  CHANGE = 'cell/change',
 }
 
 export interface ToggleAction extends Action {
   type: ActionNames.TOG;
-  rownum?: number;
-  colnum?: number;
+  rownum: number;
+  colnum: number;
 }
 
 export const toggleCellStatus: any = (rownum: number, colnum: number): ToggleAction => ({
@@ -17,15 +18,33 @@ export const toggleCellStatus: any = (rownum: number, colnum: number): ToggleAct
   colnum: colnum,
 });
 
-export interface ResetCells {
+export interface ResetCellsAction {
   type: ActionNames.RESET;
 }
 
-export const resetCells: any = (): ResetCells => ({
+export const resetCells: any = (): ResetCellsAction => ({
   type: ActionNames.RESET,
 });
 
-export type TableAction = ToggleAction | ResetCells;
+export interface ChangeTextAction extends Action {
+  type: ActionNames.CHANGE;
+  rownum: number;
+  colnum: number;
+  text: string;
+}
+
+export const changeText: any = (
+  rownum: number,
+  colnum: number,
+  text: string,
+): ChangeTextAction => ({
+  type: ActionNames.CHANGE,
+  rownum: rownum,
+  colnum: colnum,
+  text: text,
+});
+
+export type TableAction = ToggleAction | ResetCellsAction | ChangeTextAction;
 
 export interface TableState {
   input: boolean[][];
@@ -39,9 +58,9 @@ const initialState: TableState = {
 
 export default function reducer(state: TableState = initialState, action: TableAction): TableState {
   let input: boolean[][] = state.input.slice();
+  let contents: string[][] = state.contents.slice();
   switch (action.type) {
     case ActionNames.TOG:
-      console.log(state);
       input.map((rows, i) =>
         rows.map((col, j) => {
           input[i][j] = false;
@@ -56,6 +75,9 @@ export default function reducer(state: TableState = initialState, action: TableA
         });
       });
       return Object.assign({}, state, { input });
+    case ActionNames.CHANGE:
+      contents[action.rownum][action.colnum] = action.text;
+      return Object.assign({}, state, { contents });
     default:
       return state;
   }
