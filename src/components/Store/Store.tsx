@@ -1,6 +1,12 @@
 import { combineReducers, createStore, Action } from 'redux';
 
-import table, { resetCells, toggleCellStatus, TableAction, TableState } from '../../module';
+import table, {
+  changeText,
+  resetCells,
+  toggleCellStatus,
+  TableAction,
+  TableState,
+} from '../../module';
 
 export default createStore(
   combineReducers({
@@ -25,5 +31,9 @@ export class ActionDispatcher {
 
   public reset(): void {
     this.dispatch(resetCells());
+  }
+
+  public change(rownum: number, colnum: number, text: string): void {
+    this.dispatch(changeText(rownum, colnum, text));
   }
 }
