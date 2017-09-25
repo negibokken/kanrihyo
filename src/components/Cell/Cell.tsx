@@ -31,13 +31,7 @@ export default class Cell extends React.Component<CellProps, {}> {
   }
 
   setInput(): JSX.Element {
-    return (
-      <input
-        type="text"
-        value={this.props.text}
-        onChange={this.onChange.bind(this)}
-      />
-    );
+    return <input type="text" value={this.props.text} onChange={this.onChange.bind(this)} />;
   }
 
   render(): JSX.Element {

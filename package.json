@@ -13,6 +13,7 @@
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "@bdchauvette/gulp-prettier": "^2.0.0",
     "@types/immutable": "^3.8.7",
     "@types/jquery": "^2.0.41",
     "@types/react": "^16.0.5",
@@ -30,7 +31,7 @@
     "gulp-tslint": "^7.1.0",
     "gulp-webpack": "^1.5.0",
     "htmlhint": "0.9.13",
-    "prettier": "^1.6.1",
+    "prettier": "^1.7.0",
     "sass-loader": "^6.0.3",
     "source-map-loader": "0.1.5",
     "style-loader": "^0.18.2",
