@@ -4,6 +4,10 @@ enum ActionNames {
   TOG = 'cell/toggle',
   RESET = 'cell/reset',
   CHANGE = 'cell/change',
+  CHANGE_TEXTAREA = 'textarea/change',
+  CHANGE_TITLE = 'title/change',
+  RESET_TITLE = 'title/reset',
+  TOG_TITLE = 'title/toggle',
 }
 
 export interface ToggleAction extends Action {
@@ -44,16 +48,73 @@ export const changeText: any = (
   text: text,
 });
 
-export type TableAction = ToggleAction | ResetCellsAction | ChangeTextAction;
+export interface ToggleTitleAction extends Action {
+  type: ActionNames.TOG_TITLE;
+}
+
+export const toggleTitleStatus: any = (rownum: number, colnum: number): ToggleTitleAction => ({
+  type: ActionNames.TOG_TITLE,
+});
+
+export interface ChangeTitleAction extends Action {
+  type: ActionNames.CHANGE_TITLE;
+  text: string;
+}
+
+export const changeTitle: any = (text: string): ChangeTitleAction => ({
+  type: ActionNames.CHANGE_TITLE,
+  text: text,
+});
+
+export interface ChangeTextAreaAction extends Action {
+  type: ActionNames.CHANGE_TEXTAREA;
+  text: string;
+}
+
+export const changeTextArea: any = (text: string): ChangeTextAreaAction => ({
+  type: ActionNames.CHANGE_TEXTAREA,
+  text: text,
+});
+
+export interface ResetTitleAction extends Action {
+  type: ActionNames.RESET_TITLE;
+}
+
+export const resetTitle: any = (): ResetTitleAction => ({
+  type: ActionNames.RESET_TITLE,
+});
+
+export type TableAction =
+  | ToggleAction
+  | ToggleTitleAction
+  | ResetCellsAction
+  | ChangeTextAction
+  | ChangeTextAreaAction
+  | ChangeTitleAction
+  | ResetTitleAction;
 
 export interface TableState {
+  title: string;
+  titleInput: boolean;
+  description: string;
   input: boolean[][];
   contents: string[][];
 }
 
 const initialState: TableState = {
-  input: [[false, false, false, false], [false, false, false, false]],
-  contents: [['ID', 'Title', 'Author', 'Date'], ['1', 'Test', 'taro', '2010/01/01']],
+  title: 'Sample title',
+  titleInput: false,
+  description: 'サンプルデスクリプション',
+  input: [
+    [false, false, false, false, false, false],
+    [false, false, false, false, false, false],
+    [false, false, false, false, false, false],
+  ],
+  contents: [
+    ['ID', 'タイプ', '著書名', '借りている人', '借りた日', '返却予定日'],
+    ['1', 'プログラミング', 'スーパー面白い本', 'hkt', '2010/01/01', '2022/12/1'],
+    ['2', 'プログラミング', 'スーパー楽しい本', 'hkt', '2010/01/01', '2022/12/1'],
+  ],
 };
 
 export default function reducer(state: TableState = initialState, action: TableAction): TableState {
@@ -78,6 +139,14 @@ export default function reducer(state: TableState = initialState, action: TableA
     case ActionNames.CHANGE:
       contents[action.rownum][action.colnum] = action.text;
       return Object.assign({}, state, { contents });
+    case ActionNames.TOG_TITLE:
+      return Object.assign({}, state, { titleInput: !state.titleInput });
+    case ActionNames.CHANGE_TITLE:
+      return Object.assign({}, state, { title: action.text });
+    case ActionNames.RESET_TITLE:
+      return Object.assign({}, state, { titleInput: false });
+    case ActionNames.CHANGE_TEXTAREA:
+      return Object.assign({}, state, { description: action.text });
     default:
       return state;
   }

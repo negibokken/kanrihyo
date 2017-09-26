@@ -47,7 +47,3 @@ export default class Cell extends React.Component<CellProps, {}> {
     );
   }
 }
-
-export function toggle(): void {
-  return;
-}

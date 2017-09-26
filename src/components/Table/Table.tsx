@@ -21,6 +21,16 @@ export class Table extends React.Component<TableProps, {}> {
         this.props.actions.reset();
       }
     });
+    addEventListener('click', e => {
+      const targets: string[] = ['TABLE', 'THEAD', 'TH', 'TR', 'TD', 'TBODY', 'INPUT'];
+      if (this.props.value.titleInput === true) {
+        this.props.actions.resetTitle();
+      }
+      // escape if click at not table  elements
+      if (!!!targets.find((t: string) => t === e.toElement.nodeName)) {
+        this.props.actions.reset();
+      }
+    });
   }
 
   setBody(): JSX.Element[] {

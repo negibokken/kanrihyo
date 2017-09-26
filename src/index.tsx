@@ -23,16 +23,6 @@ export class Index extends React.Component<IndexProps, any> {
     return false;
   }
 
-  componentDidMount(): void {
-    addEventListener('click', e => {
-      const targets: string[] = ['TABLE', 'THEAD', 'TH', 'TR', 'TD', 'TBODY', 'INPUT'];
-      // escape if click at not table elements
-      if (!!!targets.find((t: string) => t === e.toElement.nodeName)) {
-        this.props.actions.reset();
-      }
-    });
-  }
-
   render(): JSX.Element {
     if (this.isTop()) {
       return (
@@ -42,10 +32,17 @@ export class Index extends React.Component<IndexProps, any> {
         </div>
       );
     } else {
+      const { title, titleInput }: any = this.props.value;
       return (
         <div>
-          <Title key="title" title="title" />
-          <TextArea key="textarea" rows={4} cols={80} />
+          <Title key="title" title={title} input={titleInput} actions={this.props.actions} />
+          <TextArea
+            key="textarea"
+            description={this.props.value.description}
+            actions={this.props.actions}
+            rows={4}
+            cols={80}
+          />
           <Table {...this.props} />
         </div>
       );
