@@ -10,8 +10,8 @@ import { Title } from './components/Title/Title';
 import { TableState } from './module';
 
 interface IndexProps {
-  value: any;
-  actions: any;
+  value: TableState;
+  actions: ActionDispatcher;
 }
 
 export class Index extends React.Component<IndexProps, any> {
@@ -21,6 +21,16 @@ export class Index extends React.Component<IndexProps, any> {
 
   isTop(): boolean {
     return false;
+  }
+
+  componentDidMount(): void {
+    addEventListener('click', e => {
+      const targets: string[] = ['TABLE', 'THEAD', 'TH', 'TR', 'TD', 'TBODY', 'INPUT'];
+      // escape if click at not table elements
+      if (!!!targets.find((t: string) => t === e.toElement.nodeName)) {
+        this.props.actions.reset();
+      }
+    });
   }
 
   render(): JSX.Element {
