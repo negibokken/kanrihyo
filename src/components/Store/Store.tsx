@@ -2,8 +2,12 @@ import { combineReducers, createStore, Action } from 'redux';
 
 import table, {
   changeText,
+  changeTextArea,
+  changeTitle,
   resetCells,
+  resetTitle,
   toggleCellStatus,
+  toggleTitleStatus,
   TableAction,
   TableState,
 } from '../../module';
@@ -35,5 +39,21 @@ export class ActionDispatcher {
 
   public change(rownum: number, colnum: number, text: string): void {
     this.dispatch(changeText(rownum, colnum, text));
+  }
+
+  public changeTitle(text: string): void {
+    this.dispatch(changeTitle(text));
+  }
+
+  public toggleTitle(): void {
+    this.dispatch(toggleTitleStatus());
+  }
+
+  public resetTitle(): void {
+    this.dispatch(resetTitle());
+  }
+
+  public changeTextArea(text: string): void {
+    this.dispatch(changeTextArea(text));
   }
 }

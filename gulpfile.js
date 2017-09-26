@@ -22,7 +22,6 @@ gulp.task('tslint', ['prettier'], () => {
     let format = {
         formatter: "prose",
     };
-
     return gulp.src(['./src/**/*.tsx'])
         .pipe(tslint(format))
         .pipe(tslint.report());
