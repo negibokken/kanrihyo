@@ -17,7 +17,7 @@ export class Title extends React.Component<TitleProps, {}> {
   componentDidMount(): void {
     addEventListener('keyup', e => {
       if (e.key === 'Escape') {
-        this.props.actions.reset();
+        this.props.actions.resetTitle();
       }
     });
   }
