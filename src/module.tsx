@@ -104,7 +104,7 @@ export interface TableState {
 const initialState: TableState = {
   title: 'Sample title',
   titleInput: false,
-  description: 'サンプルデスクリプション',
+  description: 'sample description',
   input: [
     [false, false, false, false, false, false],
     [false, false, false, false, false, false],
@@ -112,8 +112,8 @@ const initialState: TableState = {
   ],
   contents: [
     ['ID', 'タイプ', '著書名', '借りている人', '借りた日', '返却予定日'],
-    ['1', 'プログラミング', 'スーパー面白い本', 'hkt', '2010/01/01', '2022/12/1'],
-    ['2', 'プログラミング', 'スーパー楽しい本', 'hkt', '2010/01/01', '2022/12/1'],
+    ['1', 'プログラミング', 'funny book', 'hkt', '2010/01/01', '2022/12/1'],
+    ['2', 'プログラミング', 'fun book', 'hkt', '2010/01/01', '2022/12/1'],
   ],
 };
 
