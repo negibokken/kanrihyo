@@ -170,7 +170,6 @@ export default function reducer(state: TableState = initialState, action: TableA
 
       state.contents.push(emptyContent);
       state.input.push(emptyInput);
-      console.log('add_row');
 
       return Object.assign({}, state, { contents: state.contents, input: state.input });
     default:
