@@ -31,6 +31,37 @@ export class Table extends React.Component<TableProps, {}> {
         this.props.actions.reset();
       }
     });
+    // reset input mode on Enter
+    let onComposition: boolean = false;
+    let compositted: boolean = false;
+    let enternum: number = 0;
+    addEventListener('keyup', e => {
+      if (onComposition) {
+        return;
+      }
+      // Return if not enter
+      if (e.keyCode !== 13) {
+        return;
+      }
+
+      // Ignore IME Enter
+      if (compositted && enternum === 0) {
+        enternum++;
+        return;
+      }
+      compositted = false;
+      enternum = 0;
+      this.props.actions.reset();
+      this.props.actions.resetTitle();
+    });
+    addEventListener('compositionstart', () => {
+      onComposition = true;
+      compositted = false;
+    });
+    addEventListener('compositionend', () => {
+      onComposition = false;
+      compositted = true;
+    });
   }
 
   setBody(): JSX.Element[] {
