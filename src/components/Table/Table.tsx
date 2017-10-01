@@ -23,7 +23,9 @@ export class Table extends React.Component<TableProps, {}> {
     });
     addEventListener('click', e => {
       const targets: string[] = ['TABLE', 'THEAD', 'TH', 'TR', 'TD', 'TBODY', 'INPUT'];
-      if (this.props.value.titleInput === true) {
+      console.log(e.toElement.nodeName);
+      console.log(e.toElement.className);
+      if (e.toElement.className !== 'heading' || e.toElement.nodeName !== 'INPUT') {
         this.props.actions.resetTitle();
       }
       // escape if click at not table  elements

@@ -31,7 +31,14 @@ export class Title extends React.Component<TitleProps, {}> {
   }
 
   setInput(): JSX.Element {
-    return <input type="text" value={this.props.title} onChange={this.onChange.bind(this)} />;
+    return (
+      <input
+        className="heading"
+        type="text"
+        value={this.props.title}
+        onChange={this.onChange.bind(this)}
+      />
+    );
   }
 
   render(): JSX.Element {
