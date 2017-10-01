@@ -18,13 +18,13 @@ export default class Cell extends React.Component<CellProps, {}> {
     super();
   }
 
-  onDoubleClick(): any {
+  onDoubleClick(): void {
     if (this.props.actions !== undefined) {
       this.props.actions.toggle(this.props.rownum, this.props.colnum);
     }
   }
 
-  onChange(e: any): any {
+  onChange(e: any): void {
     const { rownum, colnum }: any = this.props;
     this.props.actions.change(rownum, colnum, e.target.value);
   }

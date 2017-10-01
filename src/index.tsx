@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { connect, Provider } from 'react-redux';
 import { Dispatch } from 'redux';
 
+import { AddButton } from './components/AddButton/AddButton';
 import store, { ActionDispatcher, ReduxAction, ReduxState } from './components/Store/Store';
 import { Table } from './components/Table/Table';
 import { TextArea } from './components/TextArea/TextArea';
@@ -44,6 +45,7 @@ export class Index extends React.Component<IndexProps, any> {
             cols={80}
           />
           <Table {...this.props} />
+          <AddButton actions={this.props.actions} />
         </div>
       );
     }

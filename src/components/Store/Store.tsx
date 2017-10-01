@@ -1,6 +1,7 @@
 import { combineReducers, createStore, Action } from 'redux';
 
 import table, {
+  addRow,
   changeText,
   changeTextArea,
   changeTitle,
@@ -55,5 +56,9 @@ export class ActionDispatcher {
 
   public changeTextArea(text: string): void {
     this.dispatch(changeTextArea(text));
+  }
+
+  public addRow(): void {
+    this.dispatch(addRow());
   }
 }

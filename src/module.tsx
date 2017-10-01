@@ -8,6 +8,7 @@ enum ActionNames {
   CHANGE_TITLE = 'title/change',
   RESET_TITLE = 'title/reset',
   TOG_TITLE = 'title/toggle',
+  ADD_ROW = 'button/add',
 }
 
 export interface ToggleAction extends Action {
@@ -84,6 +85,14 @@ export const resetTitle: any = (): ResetTitleAction => ({
   type: ActionNames.RESET_TITLE,
 });
 
+export interface AddRowAction extends Action {
+  type: ActionNames.ADD_ROW;
+}
+
+export const addRow: any = (): AddRowAction => ({
+  type: ActionNames.ADD_ROW,
+});
+
 export type TableAction =
   | ToggleAction
   | ToggleTitleAction
@@ -91,7 +100,8 @@ export type TableAction =
   | ChangeTextAction
   | ChangeTextAreaAction
   | ChangeTitleAction
-  | ResetTitleAction;
+  | ResetTitleAction
+  | AddRowAction;
 
 export interface TableState {
   title: string;
@@ -147,6 +157,22 @@ export default function reducer(state: TableState = initialState, action: TableA
       return Object.assign({}, state, { titleInput: false });
     case ActionNames.CHANGE_TEXTAREA:
       return Object.assign({}, state, { description: action.text });
+    case ActionNames.ADD_ROW:
+      const colnum: number = state.contents[0].length;
+      const emptyContent: string[] = Array.apply(null, new Array(colnum)).map(
+        String.prototype.valueOf,
+        'Empty',
+      );
+      const emptyInput: boolean[] = Array.apply(null, new Array(colnum)).map(
+        Boolean.prototype.valueOf,
+        false,
+      );
+
+      state.contents.push(emptyContent);
+      state.input.push(emptyInput);
+      console.log('add_row');
+
+      return Object.assign({}, state, { contents: state.contents, input: state.input });
     default:
       return state;
   }
