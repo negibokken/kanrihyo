@@ -4,6 +4,12 @@
 
 * TODO
 
+## Up and Down
+
+* Up : `docker-compose up -d`
+    * And access localhost:8080
+* Down : `docker-compose down`
+
 ## Develop
 
 ### Development tools

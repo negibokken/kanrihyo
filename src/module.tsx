@@ -147,17 +147,21 @@ export default function reducer(state: TableState = initialState, action: TableA
       });
       return Object.assign({}, state, { input });
     case ActionNames.CHANGE:
+      // ここにPOSTを追加する
       contents[action.rownum][action.colnum] = action.text;
       return Object.assign({}, state, { contents });
     case ActionNames.TOG_TITLE:
       return Object.assign({}, state, { titleInput: !state.titleInput });
     case ActionNames.CHANGE_TITLE:
+      // ここにPOSTを追加する
       return Object.assign({}, state, { title: action.text });
     case ActionNames.RESET_TITLE:
       return Object.assign({}, state, { titleInput: false });
     case ActionNames.CHANGE_TEXTAREA:
+      // ここにPOSTを追加する
       return Object.assign({}, state, { description: action.text });
     case ActionNames.ADD_ROW:
+      // ここにPOSTを追加する
       const colnum: number = state.contents[0].length;
       const emptyContent: string[] = Array.apply(null, new Array(colnum)).map(
         String.prototype.valueOf,

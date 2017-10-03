@@ -5,3 +5,6 @@ tmp
 yarn-error.log
 .DS_Store
 *.swp
+kanrihyo
+datadb
+kanrihyo*

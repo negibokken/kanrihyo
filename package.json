@@ -1,7 +1,7 @@
 {
-  "name": "day5",
+  "name": "kanrihyo",
   "version": "0.0.1",
-  "author": "anonymous",
+  "author": "bokken & hktmy",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "immutable": "^3.8.1",
@@ -46,6 +46,8 @@
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
-    "debug": "gulp build && fresh"
+    "debug": "gulp build && fresh",
+    "dev:start": "npm run build & GOOS=linux GOARCH=amd64 go build && docker build -t bokken/kanrihyo:0.1 .",
+    "start": "GOOS=linux GOARCH=amd64 go build && docker-compose up -d"
   }
 }
