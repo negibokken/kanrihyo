@@ -103,7 +103,7 @@ main {
   margin: auto;
 }
 
-.heading {
+h1.heading {
   color: #313431;
   margin: 30px 0;
 }
@@ -165,6 +165,10 @@ th {
 
 tr {
   background-color: #ffffff;
+}
+
+textarea, input {
+  font-size: 100%;
 }
 
 /* tbody tr:nth-of-type(odd) {
