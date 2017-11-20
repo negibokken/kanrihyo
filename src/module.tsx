@@ -114,7 +114,7 @@ export interface TableState {
 const initialState: TableState = {
   title: 'Sample title',
   titleInput: false,
-  description: 'sample description',
+  description: '',
   input: [
     [false, false, false, false, false, false],
     [false, false, false, false, false, false],
