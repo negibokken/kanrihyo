@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
@@ -12,6 +13,8 @@ func main() {
 
 	// HTML files
 	r.LoadHTMLFiles("index.html")
+
+	dbUrl := os.Getenv("MONGODB")
 
 	// Assets
 	r.Use(static.Serve("/", static.LocalFile("./dist", false)))
