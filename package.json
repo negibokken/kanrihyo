@@ -6,20 +6,32 @@
     "bootstrap": "^3.3.7",
     "immutable": "^3.8.1",
     "jquery": "^3.1.1",
+    "koa": "^2.4.1",
+    "koa-body": "^2.5.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.2",
     "react": "^15.6.1",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
-    "request": "^2.81.0"
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "@bdchauvette/gulp-prettier": "^2.0.0",
     "@types/immutable": "^3.8.7",
     "@types/jquery": "^2.0.41",
+    "@types/koa": "^2.0.40",
+    "@types/koa-logger": "^2.0.3",
+    "@types/koa-router": "^7.0.25",
+    "@types/koa-static": "^3.0.2",
+    "@types/koa-views": "^2.0.3",
     "@types/react": "^16.0.5",
     "@types/react-data-grid": "^1.0.7",
     "@types/react-dom": "0.14.19",
     "@types/react-redux": "^5.0.6",
+    "@types/request": "^2.0.8",
     "awesome-typescript-loader": "^3.2.1",
     "css-loader": "^0.27.1",
     "del": "^2.2.2",
@@ -48,6 +60,6 @@
     "clean": "gulp clean",
     "debug": "gulp build && fresh",
     "dev:start": "npm run build & GOOS=linux GOARCH=amd64 go build && docker build -t bokken/kanrihyo:0.1 .",
-    "start": "GOOS=linux GOARCH=amd64 go build && docker-compose up -d"
+    "start": "npm run build & GOOS=linux GOARCH=amd64 go build && docker-compose up -d"
   }
 }
