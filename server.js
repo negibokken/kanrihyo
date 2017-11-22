@@ -30,9 +30,5 @@ async function create(ctx) {
   ctx.body = `${ctx.params.id}:create`
 }
 
-async function edit(ctx) {
-  ctx.body = `${ctx.params.id}:edit`
-}
-
 // listener
 if (!module.parent) app.listen(3000);
